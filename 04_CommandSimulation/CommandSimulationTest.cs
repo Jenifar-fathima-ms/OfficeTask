@@ -24,10 +24,10 @@ namespace CommandSimulationProjectTest
 			List<string> outputPaths = CommandSimulation.SimulateCommands(inputCommands);
 
 			//Assert
-			Assert.AreEqual(outputPaths.Count, 3);
-			Assert.AreEqual(outputPaths[0], "/home/user/");
-			Assert.AreEqual(outputPaths[1], "/home/");
-			Assert.AreEqual(outputPaths[2], "/home/code/");
+			Assert.AreEqual(3, outputPaths.Count);
+			Assert.AreEqual("/home/user/", outputPaths[0]);
+			Assert.AreEqual("/home/", outputPaths[1]);
+			Assert.AreEqual("/home/code/", outputPaths[2]);
 		}
 		[TestMethod]
 		public void Test_CommandSimulation_AbsolutePathCommand()
@@ -51,10 +51,10 @@ namespace CommandSimulationProjectTest
 			List<string> outputPaths = CommandSimulation.SimulateCommands(inputCommands);
 
 			//Assert
-			Assert.AreEqual(outputPaths.Count, 3);
-			Assert.AreEqual(outputPaths[0], "/var/log/");
-			Assert.AreEqual(outputPaths[1], "/etc/ssh/");
-			Assert.AreEqual(outputPaths[2], "/etc/");
+			Assert.AreEqual(3, outputPaths.Count);
+			Assert.AreEqual("/var/log/", outputPaths[0]);
+			Assert.AreEqual("/etc/ssh/", outputPaths[1]);
+			Assert.AreEqual("/etc/", outputPaths[2]);
 		}
 		[TestMethod]
 		public void Test_CommandSimulation_WrongCommand()
@@ -73,10 +73,10 @@ namespace CommandSimulationProjectTest
 			List<string> outputPaths = CommandSimulation.SimulateCommands(inputCommands);
 
 			//Assert
-			Assert.AreEqual(outputPaths.Count, 3);
-			Assert.AreEqual(outputPaths[0], "Enter Valid command");
-			Assert.AreEqual(outputPaths[1], "/home/user/");
-			Assert.AreEqual(outputPaths[2], "/home/user/code/");
+			Assert.AreEqual(3, outputPaths.Count);
+			Assert.AreEqual("Enter Valid command", outputPaths[0]);
+			Assert.AreEqual("/home/user/", outputPaths[1]);
+			Assert.AreEqual("/home/user/code/", outputPaths[2]);
 		}
 		[TestMethod]
 		public void Test_CommandSimulation_NoCommand()
@@ -88,7 +88,7 @@ namespace CommandSimulationProjectTest
 			List<string> outputPaths = CommandSimulation.SimulateCommands(inputCommands);
 
 			//Assert
-			Assert.AreEqual(outputPaths.Count, 0);
+			Assert.AreEqual(0, outputPaths.Count);
 		}
 		#endregion
 	}
